@@ -22,9 +22,21 @@
             android:fontFamily="@font/amaranth"
             android:text="My Notes"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/colorWhite">
+            android:textColor="@color/colorIcons">
 
         </TextView>
+
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_search"
+            android:textColorHint="@color/colorIcons"
+            android:hint="Search"
+            android:drawableLeft="@drawable/ic_search_icon">
+
+        </EditText>
 
     </LinearLayout>
 

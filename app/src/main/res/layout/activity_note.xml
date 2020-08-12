@@ -1,28 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
     tools:context=".NoteActivity">
-    <LinearLayout
-       android:id="@+id/linearLayoutNoteTop"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:orientation="horizontal"
-        android:padding="7dp"
+        android:src="@drawable/ic_arrow_back"
         android:layout_alignParentLeft="true">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="7dp"
 
-            android:src="@drawable/ic_arrow_back">
+    </ImageView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="false">
+    <ImageView
+        android:id="@+id/impNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_imp_unselected_icon"
+        android:tag="imp_unMarked"
+        android:layout_alignParentRight="false">
 
-        </ImageView>
+    </ImageView>
+    <ImageView
+        android:id="@+id/save_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:tag="save_icon_unchecked"
+        android:src="@drawable/ic_check_icon"
+        android:clickable="true"
+        >
 
+    </ImageView>
     </LinearLayout>
-
-
 </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/noteTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_input"
+        android:inputType="textPersonName"
+        android:hint="Note Title"
+         />
+
+
+    <EditText
+        android:id="@+id/noteDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:minHeight="200sp"
+        android:gravity="top"
+        android:includeFontPadding="false"
+        android:background="@drawable/ic_input"
+        android:inputType="textMultiLine"
+        android:hint="Type Notes here.."
+        />
+
+</LinearLayout>

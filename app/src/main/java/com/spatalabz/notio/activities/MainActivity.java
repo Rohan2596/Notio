@@ -1,4 +1,4 @@
-package com.spatalabz.notio;
+package com.spatalabz.notio.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.spatalabz.notio.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent toNote=new Intent(MainActivity.this,NoteActivity.class);
+                Intent toNote=new Intent(MainActivity.this, NoteActivity.class);
                 startActivity(toNote);
             }
         });

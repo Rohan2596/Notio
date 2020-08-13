@@ -1,4 +1,4 @@
-package com.spatalabz.notio;
+package com.spatalabz.notio.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.spatalabz.notio.R;
 
 
 public class NoteActivity extends AppCompatActivity {

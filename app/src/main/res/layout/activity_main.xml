@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth"
             android:text="My Notes"
+            android:autoSizeTextType="uniform"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/colorIcons">
 

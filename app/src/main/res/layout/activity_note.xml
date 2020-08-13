@@ -11,6 +11,7 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
     >
     <ImageView
         android:layout_width="wrap_content"
@@ -69,7 +70,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="10dp"
-        android:minHeight="200sp"
+        android:minHeight="270sp"
         android:gravity="top"
         android:includeFontPadding="false"
         android:background="@drawable/ic_input"

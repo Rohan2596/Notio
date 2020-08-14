@@ -103,14 +103,5 @@ public class Note {
     }
 
 
-    public Note(int id, String title, String description, String createdTimeStamp, String updatedTimeStamp, String color, String imagePath, String webLink) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.createdTimeStamp = createdTimeStamp;
-        this.updatedTimeStamp = updatedTimeStamp;
-        this.color = color;
-        this.imagePath = imagePath;
-        this.webLink = webLink;
-    }
+
 }

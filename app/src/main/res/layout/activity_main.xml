@@ -43,7 +43,7 @@
 
 
     </LinearLayout>
-<androidx.recyclerview.widget.RecyclerView
+<ImageView
     android:id="@+id/recycler"
     android:layout_below="@id/linearLayoutTop"
     android:layout_above="@id/linearLayoutBottom"
@@ -51,7 +51,7 @@
     android:layout_height="match_parent">
 
 
-</androidx.recyclerview.widget.RecyclerView>
+</ImageView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_button"
         android:layout_width="wrap_content"

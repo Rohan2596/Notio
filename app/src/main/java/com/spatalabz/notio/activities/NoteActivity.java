@@ -2,18 +2,33 @@ package com.spatalabz.notio.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.spatalabz.notio.R;
+import com.spatalabz.notio.database.NoteDatabase;
+import com.spatalabz.notio.model.Note;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 
 public class NoteActivity extends AppCompatActivity {
 
-    ImageView save_icon;
-    ImageView important_notes;
+    private ImageView save_icon,important_notes,back_arrow;
+    private EditText noteTitle,noteDescription;
+    private TextView textDateTime;
+
 
 
     @Override
@@ -25,17 +40,8 @@ public class NoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-            if (save_icon.getTag().equals("save_icon_unchecked")){
-                save_icon.setImageResource(R.drawable.ic_baseline_check_circle_24);
-                save_icon.setTag("save_icon_checked");
-                Log.i("Save Check", "onClick:  "+save_icon.getTag());
-            }
-            else{
-                    save_icon.setImageResource(R.drawable.ic_check_icon);
-                    save_icon.setTag("save_icon_unchecked");
-                    Log.i("Save Check", "onClick:  "+save_icon.getTag());
-                }
-            }
+                saveNote();
+                    }
         });
         important_notes=findViewById(R.id.impNotes);
         important_notes.setOnClickListener(new View.OnClickListener() {
@@ -56,5 +62,41 @@ public class NoteActivity extends AppCompatActivity {
             }
         });
 
+        noteTitle=findViewById(R.id.noteTitle);
+        noteDescription=findViewById(R.id.noteDescription);
+        textDateTime=findViewById(R.id.note_creation_date);
+        textDateTime.setText(
+                new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm a", Locale.getDefault())
+                        .format(new Date())
+        );
+
+        back_arrow=findViewById(R.id.arrow_back);
+        back_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent toMainActivity=new Intent(NoteActivity.this,MainActivity.class);
+                startActivity(toMainActivity);
+            }
+        });
+
     }
+
+   private void saveNote(){
+       final List<Note>[] notes = new List[]{new ArrayList<>()};
+       if(noteTitle.getText().toString().trim().isEmpty()){
+            Toast.makeText(this,"Note title can't be empty",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        final Note note=new Note();
+        note.setTitle(noteTitle.getText().toString());
+        note.setDescription(noteDescription.getText().toString());
+        note.setCreatedTimeStamp(textDateTime.getText().toString());
+       NoteDatabase.getNoteDatabase(getApplicationContext()).noteDao().insertNote(note);
+       notes[0] =NoteDatabase.getNoteDatabase(getApplicationContext()).noteDao().getAllNotes();
+
+
+       Toast.makeText(this,String.valueOf(notes[0].get(0).getTitle()),Toast.LENGTH_SHORT).show();
+
+   }
+
 }

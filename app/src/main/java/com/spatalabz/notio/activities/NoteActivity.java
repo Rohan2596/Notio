@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.spatalabz.notio.R;
+import com.spatalabz.notio.dao.NoteDao;
 import com.spatalabz.notio.database.NoteDatabase;
 import com.spatalabz.notio.model.Note;
 
@@ -58,7 +59,7 @@ public class NoteActivity extends AppCompatActivity {
                     important_notes.setTag("imp_unMarked");
                     Log.i("Save Check", "onClick:  "+important_notes.getTag());
                 }
-
+           getAllNotes();
             }
         });
 
@@ -82,7 +83,6 @@ public class NoteActivity extends AppCompatActivity {
     }
 
    private void saveNote(){
-       final List<Note>[] notes = new List[]{new ArrayList<>()};
        if(noteTitle.getText().toString().trim().isEmpty()){
             Toast.makeText(this,"Note title can't be empty",Toast.LENGTH_SHORT).show();
             return;
@@ -92,10 +92,17 @@ public class NoteActivity extends AppCompatActivity {
         note.setDescription(noteDescription.getText().toString());
         note.setCreatedTimeStamp(textDateTime.getText().toString());
        NoteDatabase.getNoteDatabase(getApplicationContext()).noteDao().insertNote(note);
-       notes[0] =NoteDatabase.getNoteDatabase(getApplicationContext()).noteDao().getAllNotes();
 
 
-       Toast.makeText(this,String.valueOf(notes[0].get(0).getTitle()),Toast.LENGTH_SHORT).show();
+
+   }
+   private NoteDao connectionSetup(){
+        return NoteDatabase.getNoteDatabase(getApplicationContext()).noteDao();
+   }
+   private void getAllNotes(){
+       final List<Note>[] notes = new List[]{new ArrayList<>()};
+       notes[0] =connectionSetup().getAllNotes();
+       Toast.makeText(this,String.valueOf(notes[0].size()),Toast.LENGTH_SHORT).show();
 
    }
 

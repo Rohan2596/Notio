@@ -8,7 +8,7 @@
     android:orientation="vertical"
     tools:context=".activities.NoteActivity">
 
-<RelativeLayout
+    <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
@@ -54,6 +54,14 @@
 </RelativeLayout>
 
 
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
     <EditText
         android:id="@+id/noteTitle"
         android:layout_width="match_parent"
@@ -66,7 +74,8 @@
         android:inputType="textPersonName"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold" />
-     <TextView
+
+    <TextView
          android:id="@+id/note_creation_date"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
@@ -78,14 +87,22 @@
         android:id="@+id/noteDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_marginTop="10dp"
-        android:minHeight="270sp"
-        android:gravity="top"
-        android:includeFontPadding="false"
         android:background="@drawable/ic_input"
-        android:inputType="textMultiLine"
+        android:ems="10"
+        android:gravity="top"
         android:hint="Type Notes here.."
-        />
+        android:includeFontPadding="false"
+        android:inputType="textMultiLine"
+        android:minHeight="460sp" />
+        </LinearLayout>
+    </ScrollView>
+    <include
+        android:id="@+id/colorlayout"
+        layout="@layout/miscellanous"
+        android:layout_gravity="end"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+    </include>
 </LinearLayout>

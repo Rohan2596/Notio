@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/black"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/circle_button"
+                android:backgroundTint="#000"
+                android:padding="10dp"
+                android:text="Black"
+                android:textColor="#fff" />
+            <Button
+                android:id="@+id/gold"
+                android:padding="10dp"
+                android:backgroundTint="#feb633"
+                android:background="@drawable/circle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gold"
+                android:textColor="#fff"/>
+            <Button
+                android:id="@+id/red"
+                android:padding="10dp"
+                android:backgroundTint="#ee4035"
+                android:background="@drawable/circle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red"
+                android:textColor="#fff"/>
+
+            <Button
+                android:id="@+id/green"
+                android:backgroundTint="#06d755"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_button"
+                android:text="Green"
+                android:textColor="#fff"/>
+
+
+        </LinearLayout>
+    </FrameLayout>
+
 
 </LinearLayout>

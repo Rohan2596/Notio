@@ -58,12 +58,14 @@
         android:id="@+id/noteTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_marginTop="10dp"
         android:background="@drawable/ic_input"
-        android:inputType="textPersonName"
+        android:ems="10"
+        android:fontFamily="@font/amaranth"
         android:hint="Note Title"
-         />
+        android:inputType="textPersonName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
      <TextView
          android:id="@+id/note_creation_date"
          android:layout_width="wrap_content"

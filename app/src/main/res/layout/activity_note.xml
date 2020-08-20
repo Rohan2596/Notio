@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,10 +9,12 @@
     tools:context=".activities.NoteActivity">
 
     <RelativeLayout
+        android:id="@+id/menuLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp"
-    >
+    android:layout_marginBottom="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
     <ImageView
         android:id="@+id/arrow_back"
         android:clickable="true"
@@ -53,15 +55,15 @@
     </LinearLayout>
 </RelativeLayout>
 
+<ScrollView
+    android:layout_below="@+id/menuLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    android:layout_height="wrap_content">
     <EditText
         android:id="@+id/noteTitle"
         android:layout_width="match_parent"
@@ -79,6 +81,7 @@
          android:id="@+id/note_creation_date"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
+        android:fontFamily="@font/amaranth"
          android:text="Note Creation Date">
 
      </TextView>
@@ -90,19 +93,24 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/ic_input"
         android:ems="10"
+        android:fontFamily="@font/amaranth"
         android:gravity="top"
         android:hint="Type Notes here.."
         android:includeFontPadding="false"
         android:inputType="textMultiLine"
-        android:minHeight="460sp" />
-        </LinearLayout>
-    </ScrollView>
-    <include
-        android:id="@+id/colorlayout"
-        layout="@layout/miscellanous"
-        android:layout_gravity="end"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:minHeight="250sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold" />
 
-    </include>
+
 </LinearLayout>
+</ScrollView>
+
+    <include
+        layout="@layout/miscellanous"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-60dp"></include>
+</RelativeLayout>

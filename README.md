@@ -2,4 +2,4 @@
 Notes Application Building
 
 
-![untitleddesign_1_original-3.jpg](https://user-images.githubusercontent.com/44846827/92439041-ae1acf80-f1c7-11ea-8984-045c8d707e93.jpg)
+![Screenshot_20200818-215637.jpg](https://user-images.githubusercontent.com/44846827/92439609-c93a0f00-f1c8-11ea-936f-36c91aa13638.jpg)
